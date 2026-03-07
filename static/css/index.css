@@ -1,0 +1,115 @@
+body {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.7) !important; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-glass {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 50px auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: none !important;
+    border-radius: 15px !important;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+.BgImg {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.TextCenter {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 576px) {
+    .TextCenter {
+        padding: 20px;
+    }
+}
+
+.BtnCalendar {
+    background-color: #2E7D32;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.BtnCalendar:hover {
+    background-color: #1B5E20;
+    color: white;
+}
+
+.ListEvent {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.ListEventItem {
+    background: #e8f5e9;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero-glass {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    .display-6 {
+        font-size: 1.5rem;
+    }
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+

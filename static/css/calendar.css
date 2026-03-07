@@ -1,0 +1,98 @@
+.calendar-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.btn-nav {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #198754;
+    padding: 5px 15px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.btn-nav:hover {
+    background: rgba(25, 135, 84, 0.1);
+}
+
+.calendar-grid-header, .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: #495057;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.day-cell {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.day-cell:hover:not(.empty) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.day-cell.empty {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.day-cell.today {
+    border: 2px solid #198754;
+    background: rgba(25, 135, 84, 0.05);
+}
+
+.day-cell.today .gregorian-num {
+    color: #198754;
+    font-size: 1.2rem;
+}
+
+.gregorian-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.hijri-num {
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.event-badge {
+    background: #198754;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.event-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #198754;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .day-cell {
+        min-height: 60px;
+        padding: 5px;
+    }
+    .hijri-num {
+        display: none;
+    }
+}

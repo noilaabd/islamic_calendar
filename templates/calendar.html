@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="calendar-container my-5">
+    <div class="calendar-nav d-flex justify-content-between align-items-center mb-4 p-3 bg-white shadow-sm rounded-4">
+        <a href="?month={{ prev_month }}&year={{ prev_year }}" class="btn-nav">←</a>
+        <h2 class="month-title fw-bold mb-0 text-dark">{{ month_name }} {{ year }}</h2>
+        <a href="?month={{ next_month }}&year={{ next_year }}" class="btn-nav">→</a>
+    </div>
+
+    <div class="calendar-grid-header d-grid">
+        <div class="weekday">Пн</div>
+        <div class="weekday">Вт</div>
+        <div class="weekday">Ср</div>
+        <div class="weekday">Чт</div>
+        <div class="weekday">Пт</div>
+        <div class="weekday text-danger">Сб</div>
+        <div class="weekday text-danger">Вс</div>
+    </div>
+
+    <div class="calendar-grid d-grid">
+        {% for week in calendar %}
+            {% for day in week %}
+                <div class="day-cell {% if not day %}empty{% endif %} {% if day.is_today %}today{% endif %}">
+                    {% if day %}
+                        <div class="day-numbers d-flex justify-content-between align-items-start">
+                            <span class="gregorian-num">{{ day.day }}</span>
+                            <span class="hijri-num text-muted">{{ day.hijri_day }}</span>
+                        </div>
+                        
+                        <div class="events-container mt-2">
+                            {% for event in day.events %}
+                                <div class="event-badge" title="{{ event.name }}">
+                                    <span class="event-text d-none d-md-block">{{ event.name|truncatechars:12 }}</span>
+                                    <span class="event-dot d-md-none"></span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
