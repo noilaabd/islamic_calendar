@@ -1,2 +1,48 @@
-<h1>Конвертер дат</h1>
-<p>Скоро здесь будет конвертер хиджра ↔ григорианский</p>
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/converter.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="converter-page">
+    <div class="converter-card">
+        <h1>Конвертер дат</h1>
+
+        <div class="field">
+            <label for="gregorian">Григорианская дата</label>
+            <input type="date" id="gregorian">
+        </div>
+
+        <div class="field">
+            <label for="hijri">Хиджрийская дата (YYYY-MM-DD)</label>
+            <input type="text" id="hijri" placeholder="1446-09-15">
+        </div>
+
+        <div class="result-box">
+            <h3>Результат</h3>
+            <div class="result" id="result">—</div>
+        </div>
+
+    
+    </div>
+</div>
+
+<script>
+function convert() {
+    const g = document.getElementById("gregorian").value;
+    const h = document.getElementById("hijri").value;
+
+    fetch(`/converter/convert/?gregorian=${g}&hijri=${h}`)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("result").innerText = data.result;
+        });
+}
+
+document.getElementById("gregorian").addEventListener("change", convert);
+document.getElementById("hijri").addEventListener("input", convert);
+</script>
+{% endblock %}

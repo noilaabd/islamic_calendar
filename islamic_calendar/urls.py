@@ -6,5 +6,6 @@ urlpatterns = [
     path('', include('apps.pages.urls')),    
     path('calendar/', include('apps.hijri_calendar.urls')), 
     path('converter/', include('apps.converter.urls')), 
-    path('events/', include('apps.events.urls')),          
+    path('events/', include('apps.events.urls')),     
+    path('quran/', include('apps.quran.urls')),     
 ]

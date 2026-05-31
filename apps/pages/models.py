@@ -9,7 +9,7 @@ class Event(models.Model):
     ]
 
     name = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, blank=True)  # уникальный slug
+    slug = models.SlugField(unique=True, blank=True) 
     description = models.TextField(blank=True)
     type = models.CharField(max_length=20, choices=EVENT_TYPES, default='memorial')
     day_hijri = models.PositiveSmallIntegerField(default=1) 
@@ -24,7 +24,6 @@ class Event(models.Model):
             base_slug = slugify(self.name, allow_unicode=True)
             slug = base_slug
             counter = 1
-            # Генерируем уникальный slug, если такой уже есть
             while Event.objects.filter(slug=slug).exists():
                 slug = f"{base_slug}-{counter}"
                 counter += 1
@@ -47,7 +46,6 @@ class HijriMonth(models.Model):
             base_slug = slugify(self.name, allow_unicode=True)
             slug = base_slug
             counter = 1
-            # Генерируем уникальный slug, если такой уже есть
             while HijriMonth.objects.filter(slug=slug).exists():
                 slug = f"{base_slug}-{counter}"
                 counter += 1

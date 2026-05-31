@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Taqweem — Список сур Корана{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/quran_list.css' %}">
+<style>
+    :root { --bg-url: url("{% static background %}"); }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="quran-page">
+    <div class="container">
+        <h1 class="text-center text-white fw-bold mb-5">Священный Коран</h1>
+        
+        <div class="row g-3">
+            {% for surah in surahs %}
+            <div class="col-md-4 col-sm-6">
+                <a href="{% url 'surah_detail' surah.number %}" class="text-decoration-none">
+                    <div class="surah-card p-3 rounded-4 d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <div class="surah-number me-3">{{ surah.number }}</div>
+                            <div>
+                                <h5 class="mb-0 fw-bold">{{ surah.englishName }}</h5>
+                                <small class="opacity-75">Аятов: {{ surah.numberOfAyahs }}</small>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <h4 class="mb-0 text-success fw-bold">{{ surah.name }}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+            <div class="text-white text-center w-100 py-5">
+                <p class="lead">Не удалось загрузить Коран. Пожалуйста, проверьте подключение к интернету.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

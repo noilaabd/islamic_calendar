@@ -1,0 +1,46 @@
+body.main-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                var(--bg-url) no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+.quran-page {
+    min-height: 80vh;
+    padding: 40px 0;
+}
+
+.surah-header {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ayah-box {
+    background: rgba(255, 255, 255, 0.96);
+    border-left: 5px solid #28a745;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.arabic-text {
+    font-family: 'Traditional Arabic', 'Scheherazade New', serif;
+    font-size: 2.2rem;
+    direction: rtl;
+    line-height: 2;
+}
+
+.transliteration-text {
+    font-size: 1.1rem;
+    color: #495057;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.ayah-number {
+    background: #28a745;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}

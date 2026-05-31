@@ -11,7 +11,6 @@
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
 
     <style>
-        /* Инлайновая подстановка фона из Django */
         body {
             background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('{% static background %}') !important;
         }
@@ -34,6 +33,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'hijri_calendar' %}">Календарь</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'converter' %}">Конвертер</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'events' %}">События</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/quran/">Коран</a></li>
                 </ul>
             </div>
         </div>
@@ -72,10 +72,12 @@
         <section class="container mb-4">
             <div class="glass-effect p-4 rounded-4 shadow-sm text-center">
                 <h2 class="text-success fw-bold">Месяц: {{ month_info.name }}</h2>
+                
                 <p class="lead text-muted">{{ month_info.description }}</p>
+                
                 {% if month_info.recommendations %}
-                    <div class="mt-2 small">
-                        <strong class="text-dark">Рекомендации:</strong> {{ month_info.recommendations }}
+                    <div class="mt-2 small text-dark">
+                        <strong>Рекомендации:</strong> {{ month_info.recommendations }}
                     </div>
                 {% endif %}
             </div>

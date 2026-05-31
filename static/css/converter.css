@@ -1,0 +1,77 @@
+.converter-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.converter-card {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+.field {.converter-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.converter-card {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.field input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: 700;
+    color: #064e3b;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;  /* отображать только одну строку */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+    margin-bottom: 14px;
+}
+
+.field input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: 700;
+    color: #064e3b;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

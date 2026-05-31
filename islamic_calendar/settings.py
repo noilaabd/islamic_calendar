@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'apps.events', 
     'apps.hijri_calendar', 
     'apps.pages', 
+    'apps.quran',
 
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Taqweem — Сура {{ surah.name }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/quran_detail.css' %}">
+<style>
+    :root { --bg-url: url("{% static background %}"); }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="quran-page">
+    <div class="container" style="max-width: 850px;">
+        
+        <a href="{% url 'quran_list' %}" class="btn btn-outline-light rounded-3 mb-4">← К списку сур</a>
+
+        {% if surah %}
+        <div class="surah-header text-center text-white p-4 rounded-4 mb-5">
+            <h1 class="fw-bold mb-1">{{ surah.number }}. {{ surah.name }}</h1>
+            <h2 class="text-success fw-bold">{{ surah.local_name }}</h2>
+        </div>
+
+        <div class="ayahs-list">
+            {% for ayah in surah.ayahs %}
+            <div class="ayah-box p-4 rounded-4 mb-4">
+                <div class="mb-3">
+                    <span class="ayah-number">Аят {{ ayah.number }}</span>
+                </div>
+                
+                <div class="arabic-text text-end mb-3 text-dark">
+                    {{ ayah.arabic }}
+                </div>
+                
+                <hr class="my-3" style="opacity: 0.1;">
+                
+                <div class="transliteration-text">
+                    <span class="text-muted d-block small mb-1">ТРАНСКРИПЦИЯ:</span>
+                    <strong>{{ ayah.transliteration }}</strong>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="alert alert-danger text-center rounded-4">Не удалось открыть суру. Попробуйте позже.</div>
+        {% endif %}
+        
+    </div>
+</div>
+{% endblock %}

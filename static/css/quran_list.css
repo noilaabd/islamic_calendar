@@ -1,0 +1,37 @@
+body.main-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                var(--bg-url) no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+.quran-page {
+    min-height: 80vh;
+    padding: 40px 0;
+}
+
+.surah-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.surah-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.22);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.surah-number {
+    background: rgba(40, 167, 69, 0.75);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}

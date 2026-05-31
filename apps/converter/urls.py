@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from .views import converter_view, convert_date
 
 urlpatterns = [
-    path('', views.converter_view, name='converter'),
+    path("", converter_view, name="converter"),
+    path("convert/", convert_date, name="convert_date"),
 ]
